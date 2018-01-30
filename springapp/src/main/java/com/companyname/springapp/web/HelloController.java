@@ -1,6 +1,8 @@
 package com.companyname.springapp.web;
 
 import java.io.IOException;
+import java.util.Date;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,9 +22,10 @@ public class HelloController {
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        logger.info("Returning hello view");
+    	String now = (new Date()).toString();
+        logger.info("Returning hello view with " + now);
 
-        return new ModelAndView("hello.jsp");
+        return new ModelAndView("WEB-INF/views/hello.jsp", "now", now);
     }
     
     
@@ -31,7 +34,11 @@ public class HelloController {
             throws ServletException, IOException {
 
         logger.info("Returning hello service");
-
-        return new ModelAndView("servicios.jsp");
+        
+        String nombre = "Pepe";
+        
+        return new ModelAndView("servicios.jsp","minombre", nombre );
+        
+        
     }
 }
