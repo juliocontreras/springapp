@@ -25,7 +25,7 @@ public class HelloController {
     	String now = (new Date()).toString();
         logger.info("Returning hello view with " + now);
 
-        return new ModelAndView("WEB-INF/views/hello.jsp", "now", now);
+        return new ModelAndView("hello", "now", now);
     }
     
     
@@ -37,7 +37,7 @@ public class HelloController {
         
         String nombre = "Pepe";
         
-        return new ModelAndView("servicios.jsp","minombre", nombre );
+        return new ModelAndView("servicios","minombre", nombre );
         
         
     }
