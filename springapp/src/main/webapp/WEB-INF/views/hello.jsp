@@ -11,8 +11,11 @@
     <c:forEach items="${model.products}" var="prod">
     <c:out value="${prod.description}"/> <i>$<c:out value="${prod.price}"/></i><br><br>
     </c:forEach>
+    <br>
+    <a href="<c:url value="priceincrease.htm"/>">Increase Prices</a>
+    <br>
     <button href="index.jsp" type="button" class="btn btn-primary">Recarga</button>
      &nbsp;&nbsp;<button href="servicios.jsp" type="button" class="btn btn-danger">Servicios</button>
-   
+     
   </body>
 </html>
